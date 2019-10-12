@@ -4,6 +4,8 @@ var plane
 var situation
 var isEnd = false 
 var actualStatus = {}
+onready var situationAnimator = get_node("situationAnimator")
+onready var actionplaneAnimator = get_node("actionPlaneAnimator")
 func _ready():
 	plane = get_node("../Plane").actualPlane()
 	print(plane)
@@ -11,16 +13,13 @@ func _ready():
 
 	
 
-func _decode(): 
+func decode(): 
 	var situationTxt = situation.getName()
 	var planeType = plane.getPlaneType()
 	var actions = []
 	match(situationTxt):
 		'sitTornado':
-			#Primero se llama a la animacion de la situación:
-			#Se muestran los 4 botones en pantalla, cada uno con su texto de accion
-			#Se espera al input del usuario para lanzar la animacion de la accion con el avion
-			pass
+			decodifier(situationAnimator, actionplaneAnimator, planeType, situation)
 		"sitTurbulencia":
 			pass
 		"sit1Avion":
@@ -29,7 +28,13 @@ func _decode():
 			pass
 			
 			
-	
+func decodifier(sAnim, aAnim, planeType, situation):
+		var danger = situation.situationDanger
+		var actions = situation.actions
+		sAnim.play(situation.situationAnimation)
+		#showButtons 
+		aAnim.play(situation.actionAnimation)
+		
 	
 #Idea: hacer un megaswitch, cada uno perteneciente a una action de la situation, en casa switch se
 #llama  a la funcion que analiza el resultado a partir de action+tipoPlane.
