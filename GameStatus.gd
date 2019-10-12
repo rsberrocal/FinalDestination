@@ -1,12 +1,13 @@
-extends Node2D
+extends Node
 
 var plane
 var situation
 var isEnd = false 
 var actualStatus = {}
 func _ready():
-	plane = self.get_node("Plane").actualPlane()
-	situation = self.get_node("Situations").getActualSituation()
+	plane = get_node("../Plane").actualPlane()
+	print(plane)
+	#situation = self.get_node("Situations").getActualSituation()
 	status()
 
 func status():
@@ -16,7 +17,7 @@ func status():
 			isEnd = true		
 		actualStatus = {
 			plane: plane,
-			situation: self.get_node("Situations").getActualSituation()
+			situation: self.get_node("../Situations").getActualSituation()
 		}
 		isEnd = true
 	
