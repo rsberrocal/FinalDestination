@@ -5,16 +5,19 @@ extends KinematicBody2D
 # var b = "text"
 var namePlane
 var typePlane
-var dict = {}
+var planes = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():	
 	var file = File.new()
 	file.open("res://assets/config/planeConfig.json", file.READ)
 	var text = file.get_as_text()	
-	dict = JSON.parse(text).result	
-	print(dict['planes'])
-	file.close()	
+	planes = JSON.parse(text).result
+	planes = planes['planes']
+	file.close()
+	#To get random
+	var plane = planes[randi() % planes.size()]
+	print(plane)
 
 
 var motion = Vector2()
