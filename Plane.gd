@@ -14,12 +14,18 @@ func _ready():
 	file.close()
 	#To get random
 	plane = planes[randi() % planes.size()]	
+	setSprite()
 	
 func getRandomPlane():
 	return planes[randi() % planes.size()]
 
 func actualPlane():
 	return plane
+
+func setSprite():
+    var sprite = preload("res://assets/Img/"+plane.sprite)
+    onready var contentSprite = get_node("Plane")
+    contentSprite.set_texture(sprite)
 
 #var motion = Vector2()
 #func _physics_process(delta):
