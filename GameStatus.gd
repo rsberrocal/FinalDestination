@@ -3,34 +3,47 @@ extends Node
 var plane
 var situation
 var isEnd = false 
-var actualStatus = {}
+var actualStatus = []
+var buttons = {}
+onready var situationAnimator = get_node("situationAnimator")
+onready var actionplaneAnimator = get_node("actionPlaneAnimator")
 func _ready():
 	plane = get_node("../Plane").actualPlane()
 	print(plane)
+	buttons[0]= {'button': get_node("Button"), 'danger': 0, 'color': "white"}
+	buttons[1]= {'button': get_node("Button"), 'danger': 0, 'color': "white"}
+	buttons[2]= {'button': get_node("Button"), 'danger': 0, 'color': "white"}
+	buttons[3]=	{'button': get_node("Button"), 'danger': 0, 'color': "white"}
 	#situation = self.get_node("Situations").getActualSituation()
 
 	
 
-func _decode(): 
+func decode(): 
 	var situationTxt = situation.getName()
 	var planeType = plane.getPlaneType()
 	var actions = []
-	match(situationTxt):
-		'sitTornado':
-			#Primero se llama a la animacion de la situación:
-			#Se muestran los 4 botones en pantalla, cada uno con su texto de accion
-			#Se espera al input del usuario para lanzar la animacion de la accion con el avion
-			pass
-		"sitTurbulencia":
-			pass
-		"sit1Avion":
-			pass
-		"sit2Avion":
-			pass
+	decodifier(situationAnimator, actionplaneAnimator, planeType, situation)
 			
 			
-	
-	
+func decodifier(sAnim, aAnim, planeType, situation):
+		var danger = situation.situationDanger
+		var actions = situation.actions
+		buttons[danger]['danger'] = danger
+		for i in range(len(buttons)):
+			buttons[i]['color'] == actions[i]
+			
+		
+#		sAnim.play(situation.situationAnimation)
+#		var inputAnimation = input...
+#		aAnim.play(situation.actionAnimation)
+#		if (inputAnimation == danger):
+#			#youwin
+#
+#
+#		else:
+#			#youlose
+#			pass
+#
 #Idea: hacer un megaswitch, cada uno perteneciente a una action de la situation, en casa switch se
 #llama  a la funcion que analiza el resultado a partir de action+tipoPlane.
 #Si por ejemplo hay 30 situations deberia haber un switch de 120 casos uno para cada animacion de accion+plane.
