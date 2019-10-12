@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Rojo1.png-99003d87ba936630f8e2fb3155326a33.stex"
+path="res://.import/amarillo.jpg-0cf306b7a0c1981454105288d82577dc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Img/botones/Rojo1.png"
-dest_files=[ "res://.import/Rojo1.png-99003d87ba936630f8e2fb3155326a33.stex" ]
+source_file="res://assets/Img/amarillo.jpg"
+dest_files=[ "res://.import/amarillo.jpg-0cf306b7a0c1981454105288d82577dc.stex" ]
 
 [params]
 
