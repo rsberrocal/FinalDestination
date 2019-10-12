@@ -1,0 +1,33 @@
+{
+  "situations":[
+    {
+      "situationTxt": "SitTornado",
+      "situationDanger": 1,
+      "situationAnimation": "aniS",
+      "actions": ["act1","act2","act3","act4"],
+      "actionsAnimation": ["aniA1","aniA2", "aniA3","aniA4"]
+    },
+    {
+      "situationTxt": "sitTurbulencia",
+      "situationDanger": 2,
+      "situationAnimation": "aniS",
+      "actions": ["act1","act2","act3","act4"],
+      "actionsAnimation": ["aniA1","aniA2", "aniA3","aniA4"]
+    },
+    {
+      "situationTxt": "sit1Avion",
+      "situationDanger": 3,
+      "situationAnimation": "aniS",
+      "actions": ["act1","act2","act3","act4"],
+      "actionsAnimation": ["aniA1","aniA2", "aniA3","aniA4"]
+    },
+    {
+      "situationTxt": "sit2Avion",
+      "situationDanger": 4,
+      "situationAnimation": "aniS",
+      "actions": ["act1","act2","act3","act4"],
+      "actionsAnimation": ["aniA1","aniA2", "aniA3","aniA4"]
+    }
+  ]
+}
+
