@@ -13,15 +13,25 @@ func _ready():
 	var text = file.get_as_text()	
 	situations = JSON.parse(text).result
 	situations = situations['situations']
-	actions = actions['situations']['actions']
-	situationsAnim = situationsAnim['situation']['situationAnimation']
-	actionsAnim = actionsAnim['situations']['actionsAnimation']
 	file.close()
-	#To get random
-	situation = situations[randi() % situations.size()]	
-func getSituation():
-	return situation
+	situation = getRandomSituation()	
+	print(getActions())
+
+	#Get a random situation
+func getRandomSituation():
+	 return situations[randi()% situations.size()]
 	
+func getActualSituation():
+#	actions = situations['situations']['actions']
+#	situationsAnim = situationsAnim['situation']['situationAnimation']
+#	actionsAnim = actionsAnim['situations']['actionsAnimation']
+#
+#	#To get random
+#	situation = situations[randi() % situations.size()]
+	return situation
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func getActions():
+	return situation.actions
