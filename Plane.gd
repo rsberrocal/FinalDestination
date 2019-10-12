@@ -35,7 +35,7 @@ func getSpriteText():
 		var typeSpriteB = ["res://assets/Img/Militar-B.png","res://assets/Img/Militar-N.png"]
 		return typeSpriteB[randi() % typeSpriteB.size()]
 	if plane['typePlane'] == 3:
-		var typeSpriteC = ["res://assets/Img/Pasajeros-B.png","res://assets/Img/Militar-N.png"]
+		var typeSpriteC = ["res://assets/Img/Pasajeros-B.png","res://assets/Img/Pasajeros-B.png"]
 		return typeSpriteC[randi() % typeSpriteC.size()]
 	if plane['typePlane'] == 4:
 		var typeSpriteD = ["res://assets/Img/Privado-B.png","res://assets/Img/Privado-N.png"]		
