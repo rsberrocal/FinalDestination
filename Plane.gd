@@ -4,6 +4,7 @@ extends Sprite
 # var b = "text"
 var planes = {}
 var plane
+onready var planeAnimator = get_node("PlaneAnimator")
 # Called when the node enters the scene tree for the first time.
 func _ready():	
 	var file = File.new()
@@ -14,7 +15,7 @@ func _ready():
 	file.close()
 	#To get random
 	plane = planes[randi() % planes.size()]	
-	#setSprite()
+	planeAnimator.play("initAnimation")
 	
 func getRandomPlane():
 	return planes[randi() % planes.size()]

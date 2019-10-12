@@ -8,18 +8,7 @@ func _ready():
 	plane = get_node("../Plane").actualPlane()
 	print(plane)
 	#situation = self.get_node("Situations").getActualSituation()
-	status()
 
-func status():
-	while not isEnd:
-		if(plane.has('isDead')):
-			#Finish the game
-			isEnd = true		
-		actualStatus = {
-			plane: plane,
-			situation: self.get_node("../Situations").getActualSituation()
-		}
-		isEnd = true
 	
 
 func _decode(): 
