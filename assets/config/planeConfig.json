@@ -6,15 +6,15 @@
     },
     {
       "namePlane": "Avion B",
-      "typePlane": 1
+      "typePlane": 2
     },
     {
       "namePlane": "Avion C",
-      "typePlane": 1
+      "typePlane": 3
     },
     {
       "namePlane": "Avion D",
-      "typePlane": 1
+      "typePlane": 4
     }
   ]
 }
