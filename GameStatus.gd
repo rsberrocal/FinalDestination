@@ -31,8 +31,6 @@ func _decode():
 			#Primero se llama a la animacion de la situación:
 			#Se muestran los 4 botones en pantalla, cada uno con su texto de accion
 			#Se espera al input del usuario para lanzar la animacion de la accion con el avion
-			
-			
 			pass
 		"sitTurbulencia":
 			pass
