@@ -15,11 +15,11 @@ func _ready():
 	file.close()
 	#To get random
 	plane = planes[randi() % planes.size()]	
-<<<<<<< HEAD
+
 	planeAnimator.play("initAnimation")
-=======
+
 	setSprite()
->>>>>>> f03d7848d3c3dce5f8ebc91ca66b8c771ac2f932
+
 	
 func getRandomPlane():
 	return planes[randi() % planes.size()]
