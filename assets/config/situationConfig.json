@@ -1,7 +1,7 @@
 {
   "situations":[
     {
-      "situationTxt": "SitTornado",
+      "situationTxt": "sitTornado",
       "situationDanger": 1,
       "situationAnimation": "aniS",
       "actions": ["act1","act2","act3","act4"],

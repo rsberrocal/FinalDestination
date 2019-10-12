@@ -35,3 +35,10 @@ func getActualSituation():
 
 func getActions():
 	return situation.actions
+
+func getName():
+	return situation.situationTxt
+
+func getDanger():
+	return situation.situationDanger
+

@@ -41,6 +41,8 @@ func _physics_process(delta):
 		motion.x=0
 		move_and_slide(motion)
 
+func getTypePlane():
+	return plane.typePlane
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
