@@ -14,7 +14,7 @@ func _ready():
 	file.close()
 	#To get random
 	plane = planes[randi() % planes.size()]	
-	#setSprite()
+	setSprite()
 	
 func getRandomPlane():
 	return planes[randi() % planes.size()]
@@ -22,27 +22,24 @@ func getRandomPlane():
 func actualPlane():
 	return plane
 
-#getSpriteText(type):
-#	match type:
-#		1:
-#			var typeSprite["res://assets/Img/Avioneta-B.png"]
-#			return "res://assets/Img/"
-#		2:
-#			var typeSprite["res://assets/Img/Militar-B.png"]
-#			return "res://assets/Img/"
-#		3:
-#			var typeSprite["res://assets/Img/Avioneta-B.png"]
-#			return "res://assets/Img/"
-#		4:
-#			var typeSprite["res://assets/Img/Avioneta-B.png"]
-#			return "res://assets/Img/"
-#
-#func setSprite():
-#	var textToSprite = "res://assets/Img/"+plane.sprite
-#
-#    var sprite = preload(textToSprite)
-#    onready var contentSprite = get_node("Plane")
-#    contentSprite.set_texture(sprite)
+func getSpriteText():
+	if plane['typePlane'] == 1:
+		var typeSpriteA = ["res://assets/Img/Avioneta-B.png","res://assets/Img/Avioneta-N.png"]
+		return typeSpriteA[randi() % typeSpriteA.size()]
+	if plane['typePlane'] == 2:
+		var typeSpriteB = ["res://assets/Img/Militar-B.png","res://assets/Img/Militar-N.png"]
+		return typeSpriteB[randi() % typeSpriteB.size()]
+	if plane['typePlane'] == 3:
+		var typeSpriteC = ["res://assets/Img/Pasajeros-B.png","res://assets/Img/Militar-N.png"]
+		return typeSpriteC[randi() % typeSpriteC.size()]
+	if plane['typePlane'] == 4:
+		var typeSpriteD = ["res://assets/Img/Privado-B.png","res://assets/Img/Privado-N.png"]		
+		return typeSpriteD[randi() % typeSpriteD.size()]
+
+func setSprite():
+	var textToSprite = getSpriteText()
+	var sprite = load(textToSprite)	
+	self.set_texture(sprite)
 
 #var motion = Vector2()
 #func _physics_process(delta):
