@@ -1,9 +1,26 @@
 extends Node2D
 
 var plane
-var situation 
+var situation
+var isEnd = false 
+var actualStatus = {}
 func _ready():
-	pass # Replace with function body.
+	plane = self.get_node("Plane").actualPlane()
+	situation = self.get_node("Situations").getActualSituation()
+	status()
+
+func status():
+	while not isEnd:
+		if(plane.has('isDead')):
+			#Finish the game
+			isEnd = true		
+		actualStatus = {
+			plane: plane,
+			situation: self.get_node("Situations").getActualSituation()
+		}
+		isEnd = true
+	
+
 func _decode(): 
 	pass
 #Idea: hacer un megaswitch, cada uno perteneciente a una action de la situation, en casa switch se

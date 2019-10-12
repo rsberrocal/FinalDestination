@@ -4,7 +4,7 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 var planes = {}
-
+var plane
 # Called when the node enters the scene tree for the first time.
 func _ready():	
 	var file = File.new()
@@ -14,8 +14,13 @@ func _ready():
 	planes = planes['planes']
 	file.close()
 	#To get random
-	var plane = planes[randi() % planes.size()]	
+	plane = planes[randi() % planes.size()]	
 	
+func getRandomPlane():
+	return planes[randi() % planes.size()]
+
+func actualPlane():
+	return plane
 
 var motion = Vector2()
 func _physics_process(delta):
