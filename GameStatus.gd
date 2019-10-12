@@ -21,15 +21,13 @@ func _ready():
 	print('holi')
 	decode()
 
-func decode(): 
-	print('holi2')
+func decode(): 	
 	var planeType = plane['typePlane']
 	var actions = []
 	decodifier(situationAnimator, actionplaneAnimator, planeType, situation)
 			
 			
-func decodifier(sAnim, aAnim, planeType, situation):
-		print('holi3')
+func decodifier(sAnim, aAnim, planeType, situation):		
 		var danger = situation['situationDanger']
 		var actions = situation['actions']
 		
