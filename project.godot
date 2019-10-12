@@ -16,15 +16,16 @@ _global_script_class_icons={
 [application]
 
 config/name="Nuevo proyecto de juego"
-run/main_scene="res://MainScene.tscn"
+run/main_scene="res://MenuScene.tscn"
 config/icon="res://icon.png"
 
 [display]
 
 window/size/width=360
 window/size/height=640
+window/handheld/orientation="portrait"
 
 [rendering]
 
-environment/default_clear_color=Color( 1, 1, 1, 1 )
+environment/default_clear_color=Color( 0.976471, 0.960784, 0.960784, 1 )
 environment/default_environment="res://default_env.tres"

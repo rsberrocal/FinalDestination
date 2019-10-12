@@ -18,7 +18,7 @@ func _ready():
 
 	#Get a random situation
 func getRandomSituation():
-	 return situations[randi()% situations.size()]
+	 return situations[OS.get_datetime()['second'] % 2 ]
 	
 func getActualSituation():
 #	actions = situations['situations']['actions']
