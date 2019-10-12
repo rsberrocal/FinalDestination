@@ -16,8 +16,7 @@ func _ready():
 	planes = planes['planes']
 	file.close()
 	#To get random
-	var plane = planes[randi() % planes.size()]
-	print(plane)
+	var plane = planes[randi() % planes.size()]	
 
 
 var motion = Vector2()
