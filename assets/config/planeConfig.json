@@ -1,0 +1,20 @@
+{
+  "planes":[
+    {
+      "namePlane": "Avion A",
+      "typePlane": 1
+    },
+    {
+      "namePlane": "Avion B",
+      "typePlane": 1
+    },
+    {
+      "namePlane": "Avion C",
+      "typePlane": 1
+    },
+    {
+      "namePlane": "Avion D",
+      "typePlane": 1
+    }
+  ]
+}
