@@ -42,10 +42,10 @@ focus_mode = 1
 texture_normal = ExtResource( 8 )
 
 [node name="Btn1" type="TextureButton" parent="GameStatus"]
-margin_left = 118.0
-margin_top = 468.615
-margin_right = 248.0
-margin_bottom = 533.615
+margin_left = 115.0
+margin_top = 395.0
+margin_right = 245.0
+margin_bottom = 460.0
 focus_mode = 1
 enabled_focus_mode = 1
 shortcut = SubResource( 2 )
@@ -53,19 +53,19 @@ texture_normal = ExtResource( 9 )
 
 [node name="Btn2" type="TextureButton" parent="GameStatus"]
 margin_left = -68.0
-margin_top = 468.615
+margin_top = 469.0
 margin_right = 62.0
-margin_bottom = 533.615
+margin_bottom = 534.0
 focus_mode = 1
 enabled_focus_mode = 1
 shortcut = SubResource( 2 )
 texture_normal = ExtResource( 10 )
 
 [node name="Btn3" type="TextureButton" parent="GameStatus"]
-margin_left = 118.0
-margin_top = 395.0
-margin_right = 248.0
-margin_bottom = 460.0
+margin_left = 115.0
+margin_top = 469.0
+margin_right = 245.0
+margin_bottom = 534.0
 focus_mode = 1
 enabled_focus_mode = 1
 shortcut = SubResource( 2 )
