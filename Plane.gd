@@ -9,12 +9,12 @@ onready var planeAnimator = get_node("PlaneAnimator")
 func _ready():	
 	var file = File.new()
 	file.open("res://assets/config/planeConfig.json", file.READ)
-	var text = file.get_as_text()	
+	var text = file.get_as_text()
 	planes = JSON.parse(text).result
 	planes = planes['planes']
 	file.close()
 	#To get random
-	plane = planes[randi() % planes.size()]	
+	plane = getRandomPlane()
 
 	planeAnimator.play("initAnimation")
 
@@ -22,24 +22,29 @@ func _ready():
 
 	
 func getRandomPlane():
-	return planes[randi() % planes.size()]
+	return planes[OS.get_datetime()['second'] % 2 ]
 
 func actualPlane():
 	return plane
 
 func getSpriteText():
+	var listSprites = ["res://assets/Img/Avioneta-B.png","res://assets/Img/Avioneta-N.png"
+	,"res://assets/Img/Militar-B.png","res://assets/Img/Militar-N.png",
+	"res://assets/Img/Pasajeros-B.png","res://assets/Img/Pasajeros-N.png",
+	"res://assets/Img/Privado-B.png","res://assets/Img/Privado-N.png"]
+	var index = 0 if OS.get_datetime()['second'] % 2  else 1
 	if plane['typePlane'] == 1:
 		var typeSpriteA = ["res://assets/Img/Avioneta-B.png","res://assets/Img/Avioneta-N.png"]
-		return typeSpriteA[randi() % typeSpriteA.size()]
+		return typeSpriteA[index]
 	if plane['typePlane'] == 2:
 		var typeSpriteB = ["res://assets/Img/Militar-B.png","res://assets/Img/Militar-N.png"]
-		return typeSpriteB[randi() % typeSpriteB.size()]
+		return typeSpriteB[index]
 	if plane['typePlane'] == 3:
 		var typeSpriteC = ["res://assets/Img/Pasajeros-B.png","res://assets/Img/Pasajeros-B.png"]
-		return typeSpriteC[randi() % typeSpriteC.size()]
+		return typeSpriteC[index]
 	if plane['typePlane'] == 4:
 		var typeSpriteD = ["res://assets/Img/Privado-B.png","res://assets/Img/Privado-N.png"]		
-		return typeSpriteD[randi() % typeSpriteD.size()]
+		return typeSpriteD[index]
 
 func setSprite():
 	var textToSprite = getSpriteText()
