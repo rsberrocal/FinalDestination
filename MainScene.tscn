@@ -18,7 +18,7 @@ script = ExtResource( 2 )
 [node name="Situations" type="Node" parent="."]
 script = ExtResource( 3 )
 
-[node name="GameStatus" parent="." instance=ExtResource( 4 )]
+[node name="GameStatus" type="Node" parent="." instance=ExtResource( 4 )]
 script = ExtResource( 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

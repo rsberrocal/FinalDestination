@@ -14,7 +14,7 @@ func _ready():
 	file.close()
 	#To get random
 	plane = planes[randi() % planes.size()]	
-	setSprite()
+	#setSprite()
 	
 func getRandomPlane():
 	return planes[randi() % planes.size()]
@@ -22,10 +22,27 @@ func getRandomPlane():
 func actualPlane():
 	return plane
 
-func setSprite():
-    var sprite = preload("res://assets/Img/"+plane.sprite)
-    onready var contentSprite = get_node("Plane")
-    contentSprite.set_texture(sprite)
+#getSpriteText(type):
+#	match type:
+#		1:
+#			var typeSprite["res://assets/Img/Avioneta-B.png"]
+#			return "res://assets/Img/"
+#		2:
+#			var typeSprite["res://assets/Img/Militar-B.png"]
+#			return "res://assets/Img/"
+#		3:
+#			var typeSprite["res://assets/Img/Avioneta-B.png"]
+#			return "res://assets/Img/"
+#		4:
+#			var typeSprite["res://assets/Img/Avioneta-B.png"]
+#			return "res://assets/Img/"
+#
+#func setSprite():
+#	var textToSprite = "res://assets/Img/"+plane.sprite
+#
+#    var sprite = preload(textToSprite)
+#    onready var contentSprite = get_node("Plane")
+#    contentSprite.set_texture(sprite)
 
 #var motion = Vector2()
 #func _physics_process(delta):
