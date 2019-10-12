@@ -45,4 +45,6 @@ margin_right = 494.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 texture_normal = ExtResource( 2 )
+script = ExtResource( 3 )
 [connection signal="pressed" from="VBoxContainer/MenuOptions/Docs" to="VBoxContainer/MenuOptions/Docs" method="_on_TextureButton_pressed" binds= [ 0 ]]
+[connection signal="pressed" from="VBoxContainer/MenuOptions/Play" to="VBoxContainer/MenuOptions/Play" method="_on_TextureButton_pressed" binds= [ 1 ]]
