@@ -8,18 +8,7 @@ func _ready():
 	plane = get_node("../Plane").actualPlane()
 	print(plane)
 	#situation = self.get_node("Situations").getActualSituation()
-	status()
 
-func status():
-	while not isEnd:
-		if(plane.has('isDead')):
-			#Finish the game
-			isEnd = true		
-		actualStatus = {
-			plane: plane,
-			situation: self.get_node("../Situations").getActualSituation()
-		}
-		isEnd = true
 	
 
 func _decode(): 
@@ -31,8 +20,6 @@ func _decode():
 			#Primero se llama a la animacion de la situación:
 			#Se muestran los 4 botones en pantalla, cada uno con su texto de accion
 			#Se espera al input del usuario para lanzar la animacion de la accion con el avion
-			
-			
 			pass
 		"sitTurbulencia":
 			pass
