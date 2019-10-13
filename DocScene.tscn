@@ -1,34 +1,57 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://assets/Img/Avioneta-B.png" type="Texture" id=1]
+[ext_resource path="res://assets/Img/Militar-N.png" type="Texture" id=1]
 
 [node name="MarginContainer" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -1.0049
+margin_bottom = -1.00488
 custom_constants/margin_right = 180
 custom_constants/margin_top = 80
 custom_constants/margin_left = 80
 custom_constants/margin_bottom = 180
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
-margin_left = 80.0
-margin_top = 80.0
-margin_right = 180.0
-margin_bottom = 460.0
-scroll_horizontal_enabled = false
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 340.0
+margin_bottom = 680.0
+scroll_vertical = 12
 
-[node name="MainContiner" type="VBoxContainer" parent="ScrollContainer"]
-margin_right = 100.0
-margin_bottom = 380.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_bottom = 8.0
 
-[node name="Level1" type="HBoxContainer" parent="ScrollContainer/MainContiner"]
-margin_right = 100.0
-margin_bottom = 380.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
 
-[node name="Sprite" type="Sprite" parent="ScrollContainer/MainContiner/Level1"]
-position = Vector2( 63.3151, 79.1439 )
+[node name="Sprite" type="Sprite" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
+position = Vector2( 28.437, 24.2354 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
+position = Vector2( 192.525, 21.8913 )
+texture = ExtResource( 1 )
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 4.0
+margin_bottom = 4.0
+
+[node name="Sprite" type="Sprite" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
+position = Vector2( 28.437, 24.2354 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
+position = Vector2( 192.525, 21.8913 )
+texture = ExtResource( 1 )
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 8.0
+margin_bottom = 8.0
+
+[node name="Sprite" type="Sprite" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
+position = Vector2( 28.437, 24.2354 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
+position = Vector2( 192.525, 21.8913 )
 texture = ExtResource( 1 )

@@ -40,7 +40,3 @@ margin_left = 110.0
 margin_top = 470.0
 margin_right = 240.0
 margin_bottom = 535.0
-[connection signal="pressed" from="GameStatus/Btn0" to="GameStatus" method="_on_Btn0_pressed"]
-[connection signal="pressed" from="GameStatus/Btn1" to="GameStatus" method="_on_Btn1_pressed"]
-[connection signal="pressed" from="GameStatus/Btn2" to="GameStatus" method="_on_Btn2_pressed"]
-[connection signal="pressed" from="GameStatus/Btn3" to="GameStatus" method="_on_Btn3_pressed"]
