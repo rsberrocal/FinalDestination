@@ -1,6 +1,34 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/Img/Avioneta-B.png" type="Texture" id=1]
 
 [node name="MarginContainer" type="MarginContainer"]
-margin_left = -1.0
-margin_right = 39.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 180
+custom_constants/margin_top = 80
+custom_constants/margin_left = 80
+custom_constants/margin_bottom = 180
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 80.0
+margin_top = 80.0
+margin_right = 180.0
+margin_bottom = 460.0
+scroll_horizontal_enabled = false
+
+[node name="MainContiner" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 100.0
+margin_bottom = 380.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Level1" type="HBoxContainer" parent="ScrollContainer/MainContiner"]
+margin_right = 100.0
+margin_bottom = 380.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Sprite" type="Sprite" parent="ScrollContainer/MainContiner/Level1"]
+position = Vector2( 63.3151, 79.1439 )
+texture = ExtResource( 1 )
