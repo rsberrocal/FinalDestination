@@ -30,7 +30,7 @@ func decode():
 func decodifier(sAnim, aAnim, planeType, situation):		
 		var danger = situation['situationDanger']
 		var actions = situation['actions']
-		
+		#sAnim.play(situation.situationAnimation)
 		for i in range(len(buttons)):
 			buttons[i]['danger'] = i
 			buttons[i]['color'] = actions[i]
@@ -52,20 +52,30 @@ func decodifier(sAnim, aAnim, planeType, situation):
 				var texture4 = 'res://assets/Img/yellow.jpg'
 				var sprite4 = load(texture4)
 				buttons[i]['button'].set_normal_texture(sprite4)
-		
-		
-		
-#		sAnim.play(situation.situationAnimation)
-#		var inputAnimation = input...
-#		aAnim.play(situation.actionAnimation)
-#		if (inputAnimation == danger):
-#			#youwin
-#
-#
-#		else:
-#			#youlose
-#			pass
-#
+		var boolean = false 
+		var x =0
+		while (boolean == false):
+			if (buttons[0]['button'].button_up()==true):
+				x=buttons[0]['danger'] 
+				boolean=true
+			if (buttons[1]['button'].button_up()==true):
+				x=buttons[1]['danger'] 
+				boolean=true
+			if (buttons[2]['button'].button_up()==true):
+				x=buttons[2]['danger'] 
+				boolean=true
+			if (buttons[3]['button'].button_up()==true):
+				x=buttons[3]['danger'] 
+				boolean=true
+		if (danger==x):
+			pass
+			 #sAnim.play(situation.actionAnimation[0])
+			#animacion victoria
+		else:
+			pass
+			#animacionderrota
+			 #sAnim.play(situation.actionAnimation[1])
+			
 #Idea: hacer un megaswitch, cada uno perteneciente a una action de la situation, en casa switch se
 #llama  a la funcion que analiza el resultado a partir de action+tipoPlane.
 #Si por ejemplo hay 30 situations deberia haber un switch de 120 casos uno para cada animacion de accion+plane.
