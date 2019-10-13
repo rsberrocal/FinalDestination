@@ -1,7 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[sub_resource type="Animation" id=1]
-resource_name = "initAnimation"
+[ext_resource path="res://Animations/initAnimation.tres" type="Animation" id=1]
 
 [node name="PlaneAnimator" type="AnimationPlayer"]
-anims/initAnimation = SubResource( 1 )
+anims/initAnimation = ExtResource( 1 )

@@ -5,11 +5,13 @@ var situation
 var isEnd = false 
 var actualStatus = []
 var buttons = []
+var danger 
+signal is_pressed 
 onready var situationAnimator = get_node("situationAnimator")
 onready var actionplaneAnimator = get_node("actionPlaneAnimator")
 func _ready():
 	plane = get_node("../Plane").actualPlane()
-	
+
 	buttons = [
 		{'button': get_node("Btn0"), 'danger': 0, 'color': "white"},
 		{'button': get_node("Btn1"), 'danger': 0, 'color': "white"},
@@ -18,7 +20,7 @@ func _ready():
 	]
 	situation = self.get_node("../Situations")
 	situation = situation.getRandomSituation()
-	print('holi')
+	danger = situation['situationDanger']
 	decode()
 
 func decode(): 	
@@ -27,15 +29,14 @@ func decode():
 	decodifier(situationAnimator, actionplaneAnimator, planeType, situation)
 			
 			
-func decodifier(sAnim, aAnim, planeType, situation):		
-		var danger = situation['situationDanger']
+func decodifier(sAnim, aAnim, planeType, situation):	
 		var actions = situation['actions']
 		#sAnim.play(situation.situationAnimation)
 		for i in range(len(buttons)):
 			buttons[i]['danger'] = i
 			buttons[i]['color'] = actions[i]
 		for i in range(len(buttons)):
-			print(buttons)
+			
 			if buttons[i]['color']=="red":
 				var texture1 = 'res://assets/Img/red.jpg'
 				var sprite1 = load(texture1)
@@ -52,29 +53,11 @@ func decodifier(sAnim, aAnim, planeType, situation):
 				var texture4 = 'res://assets/Img/yellow.jpg'
 				var sprite4 = load(texture4)
 				buttons[i]['button'].set_normal_texture(sprite4)
+		for i in range(len(buttons)):
+			buttons[i]['button'].set_disabled(false)
 		var boolean = false 
 		var x =0
-		while (boolean == false):
-			if (buttons[0]['button'].button_up()==true):
-				x=buttons[0]['danger'] 
-				boolean=true
-			if (buttons[1]['button'].button_up()==true):
-				x=buttons[1]['danger'] 
-				boolean=true
-			if (buttons[2]['button'].button_up()==true):
-				x=buttons[2]['danger'] 
-				boolean=true
-			if (buttons[3]['button'].button_up()==true):
-				x=buttons[3]['danger'] 
-				boolean=true
-		if (danger==x):
-			pass
-			 #sAnim.play(situation.actionAnimation[0])
-			#animacion victoria
-		else:
-			pass
-			#animacionderrota
-			 #sAnim.play(situation.actionAnimation[1])
+		
 			
 #Idea: hacer un megaswitch, cada uno perteneciente a una action de la situation, en casa switch se
 #llama  a la funcion que analiza el resultado a partir de action+tipoPlane.
@@ -86,3 +69,55 @@ func decodifier(sAnim, aAnim, planeType, situation):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+
+
+func _on_Btn1_pressed():
+	var x = buttons[1]['danger'] 
+	print('x1')
+	if (x==danger):
+		pass
+		#aAnim.play("Victory")
+	else:
+		pass 
+		#aAnim.play("Lose")
+	for i in range(len(buttons)):
+		buttons[i]['button'].set_disabled(true)
+
+
+func _on_Btn2_pressed():
+	print('x2')
+	var x = buttons[2]['danger'] 
+	if (x==danger):
+		pass
+		#aAnim.play("Victory")
+	else:
+		pass 
+		#aAnim.play("Lose")
+	for i in range(len(buttons)):
+		buttons[i]['button'].set_disabled(true)
+
+func _on_Btn3_pressed():
+	print('x3')
+	var x = buttons[3]['danger'] 
+	if (x==danger):
+		pass
+		#aAnim.play("Victory")
+	else:
+		pass 
+		#aAnim.play("Lose")
+	for i in range(len(buttons)):
+		buttons[i]['button'].set_disabled(true)
+
+func _on_Btn0_pressed():
+	print('x0')
+	var x = buttons[0]['danger'] 
+	if (x==danger):
+		pass
+		#aAnim.play("Victory")
+	else:
+		pass 
+		#aAnim.play("Lose")
+	for i in range(len(buttons)):
+		buttons[i]['button'].set_disabled(true)
